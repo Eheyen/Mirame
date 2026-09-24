@@ -1,0 +1,3480 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz cumpleaños Evy 💗</title>
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    background:#0b050a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   ESCENAS
+========================================================= */
+
+.scene{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    overflow:hidden;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.scene.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+}
+
+
+/* =========================================================
+   FONDO
+========================================================= */
+
+.background{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(255,95,175,.18),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(255,150,210,.10),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #090509,
+            #21101d,
+            #10070f
+        );
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.particle{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#ffe8f3;
+
+    box-shadow:
+        0 0 8px #ff9dcc,
+        0 0 15px #ff70b6;
+
+    animation:
+        particleMove linear infinite;
+}
+
+@keyframes particleMove{
+
+    0%{
+
+        transform:
+            translateY(110vh)
+            translateX(0)
+            scale(.4);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+            translateY(-10vh)
+            translateX(80px)
+            scale(1.2);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+.petal{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:14px;
+    height:8px;
+
+    border-radius:
+        100% 0 100% 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb3d4,
+            #e95299
+        );
+
+    pointer-events:none;
+
+    z-index:2;
+
+    animation:
+        petalFall linear infinite;
+}
+
+@keyframes petalFall{
+
+    0%{
+
+        transform:
+            translateY(-20px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+
+        transform:
+            translateY(50vh)
+            translateX(80px)
+            rotate(180deg);
+    }
+
+    100%{
+
+        transform:
+            translateY(110vh)
+            translateX(-70px)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.main-button{
+
+    border:
+        1px solid
+        rgba(255,205,225,.5);
+
+    padding:
+        14px 32px;
+
+    border-radius:50px;
+
+    color:#fff;
+
+    font-size:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d9d,
+            #d92f7d
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255,70,155,.5);
+
+    cursor:pointer;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+}
+
+.main-button:hover{
+
+    transform:scale(1.06);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,70,155,.8);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff65aa,
+            #e53b87
+        );
+}
+
+.main-button:active{
+
+    transform:scale(.97);
+}
+
+
+/* =========================================================
+   BOTONES DE CONTINUAR
+========================================================= */
+
+.next-btn{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:100;
+
+    min-width:170px;
+
+    padding:
+        13px 26px;
+
+    border:
+        1px solid
+        rgba(255,190,220,.6);
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,160,.30),
+            rgba(180,40,110,.24)
+        );
+
+    color:#ffeaf4;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:16px;
+
+    letter-spacing:.2px;
+
+    cursor:pointer;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(255,80,160,.25),
+
+        inset 0 0 15px
+        rgba(255,255,255,.05);
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.next-btn:hover{
+
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,160,.50),
+            rgba(200,45,120,.40)
+        );
+
+    border-color:
+        rgba(255,220,235,.9);
+
+    box-shadow:
+        0 0 30px
+        rgba(255,80,160,.50);
+}
+
+.next-btn:active{
+
+    transform:
+        translateX(-50%)
+        scale(.97);
+}
+
+
+/* =========================================================
+   ESCENA 1
+========================================================= */
+
+.intro{
+
+    position:relative;
+
+    z-index:10;
+
+    width:90%;
+
+    text-align:center;
+}
+
+.small-text{
+
+    font-size:
+        clamp(16px,2vw,23px);
+
+    letter-spacing:3px;
+
+    opacity:.85;
+}
+
+.crown{
+
+    margin-top:15px;
+
+    font-size:35px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+.intro h1{
+
+    margin-top:5px;
+
+    font-size:
+        clamp(75px,13vw,170px);
+
+    font-style:italic;
+
+    font-weight:normal;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe0ef,
+            #ff6eae,
+            #fff1f8,
+            #ff82bd
+        );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+        titleAppear 1.5s ease forwards,
+        shineText 5s linear infinite;
+}
+
+
+/* =========================================================
+   ESCENA 2 - REGALO
+========================================================= */
+
+.gift-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:90%;
+
+    text-align:center;
+}
+
+.gift-content h2{
+
+    font-size:
+        clamp(25px,4vw,45px);
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    line-height:1.4;
+
+    margin-bottom:35px;
+}
+
+.gift{
+
+    position:relative;
+
+    width:280px;
+
+    height:220px;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    animation:
+        giftFloat 3s ease-in-out infinite;
+}
+
+.gift-box{
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:70%;
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb8d8,
+            #e84c95
+        );
+
+    box-shadow:
+        0 25px 50px
+        rgba(0,0,0,.5);
+}
+
+.gift-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:42%;
+
+    width:16%;
+
+    height:100%;
+
+    background:#ffe0ed;
+}
+
+.gift-lid{
+
+    position:absolute;
+
+    top:18%;
+
+    left:-5%;
+
+    width:110%;
+
+    height:25%;
+
+    border-radius:8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd1e4,
+            #ed4d98
+        );
+
+    z-index:5;
+
+    transition:
+        transform 1s ease;
+}
+
+.gift-ribbon{
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:44%;
+
+    width:12%;
+
+    background:#ffe2ef;
+
+    z-index:6;
+}
+
+.bow{
+
+    position:absolute;
+
+    top:-15px;
+
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index:10;
+
+    font-size:70px;
+}
+
+.gift.open{
+
+    animation:none;
+}
+
+.gift.open .gift-lid{
+
+    transform:
+        translateY(-110px)
+        rotate(-8deg);
+}
+
+
+/* =========================================================
+   ESCENA 3 - CORDERITO
+========================================================= */
+
+.lamb-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        30px 20px 90px;
+}
+
+.lamb-content h2{
+
+    font-size:
+        clamp(25px,4vw,48px);
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    line-height:1.4;
+
+    margin-bottom:10px;
+}
+
+
+/* =========================================================
+   CORDERITO
+========================================================= */
+
+.lamb{
+
+    position:relative;
+
+    width:
+        clamp(190px,27vw,260px);
+
+    height:
+        clamp(170px,25vw,230px);
+
+    margin:
+        10px auto 5px;
+
+    animation:
+        lambFloat 4s ease-in-out infinite;
+}
+
+.lamb-body{
+
+    position:absolute;
+
+    width:175px;
+
+    height:135px;
+
+    left:45px;
+
+    top:65px;
+
+    border-radius:55%;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            #ffffff,
+            #e8dfe4
+        );
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.3);
+}
+
+.lamb-head{
+
+    position:absolute;
+
+    width:110px;
+
+    height:110px;
+
+    left:0;
+
+    top:25px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+        0 10px 20px
+        rgba(0,0,0,.15);
+}
+
+.lamb-ear{
+
+    position:absolute;
+
+    width:55px;
+
+    height:30px;
+
+    top:35px;
+
+    border-radius:
+        100% 20%;
+
+    background:#f4d8e5;
+
+    transition:.4s;
+}
+
+.lamb-ear.left{
+
+    left:-25px;
+
+    transform:
+        rotate(-30deg);
+}
+
+.lamb-ear.right{
+
+    right:-25px;
+
+    transform:
+        rotate(30deg);
+}
+
+.lamb-eye{
+
+    position:absolute;
+
+    width:8px;
+
+    height:12px;
+
+    top:68px;
+
+    border-radius:50%;
+
+    background:#4b3440;
+}
+
+.lamb-eye.left{
+    left:31px;
+}
+
+.lamb-eye.right{
+    right:31px;
+}
+
+.lamb-nose{
+
+    position:absolute;
+
+    width:19px;
+
+    height:14px;
+
+    left:46px;
+
+    top:87px;
+
+    border-radius:50%;
+
+    background:#f27fb1;
+}
+
+.lamb-mouth{
+
+    position:absolute;
+
+    left:50px;
+
+    top:98px;
+
+    width:12px;
+
+    height:8px;
+
+    border-bottom:
+        2px solid #714354;
+
+    border-radius:50%;
+}
+
+.lamb-leg{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:28px;
+
+    height:50px;
+
+    border-radius:20px;
+
+    background:#eee5e9;
+}
+
+.lamb-leg.one{
+    left:70px;
+}
+
+.lamb-leg.two{
+    left:160px;
+}
+
+
+/* =========================================================
+   FLORES
+========================================================= */
+
+.flower{
+
+    position:absolute;
+
+    width:60px;
+
+    height:60px;
+
+    transform:scale(0);
+
+    animation:
+        flowerGrow 1s ease forwards;
+}
+
+.petal-flower{
+
+    position:absolute;
+
+    width:28px;
+
+    height:43px;
+
+    left:17px;
+
+    top:7px;
+
+    border-radius:
+        80% 20% 80% 20%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9dcc,
+            #e83587
+        );
+}
+
+.petal-flower:nth-child(1){
+
+    transform:
+        rotate(0deg)
+        translateY(-12px);
+}
+
+.petal-flower:nth-child(2){
+
+    transform:
+        rotate(72deg)
+        translateY(-12px);
+}
+
+.petal-flower:nth-child(3){
+
+    transform:
+        rotate(144deg)
+        translateY(-12px);
+}
+
+.petal-flower:nth-child(4){
+
+    transform:
+        rotate(216deg)
+        translateY(-12px);
+}
+
+.petal-flower:nth-child(5){
+
+    transform:
+        rotate(288deg)
+        translateY(-12px);
+}
+
+.flower-center{
+
+    position:absolute;
+
+    width:18px;
+
+    height:18px;
+
+    left:21px;
+
+    top:21px;
+
+    border-radius:50%;
+
+    background:#ffd76d;
+
+    box-shadow:
+        0 0 12px #ffd76d;
+}
+
+
+/* =========================================================
+   MARIPOSA
+========================================================= */
+
+.butterfly{
+
+    position:absolute;
+
+    font-size:35px;
+
+    animation:
+        butterflyMove 8s linear infinite;
+
+    z-index:15;
+}
+
+@keyframes butterflyMove{
+
+    0%{
+
+        transform:
+            translate(-10vw,70vh);
+    }
+
+    50%{
+
+        transform:
+            translate(50vw,25vh);
+    }
+
+    100%{
+
+        transform:
+            translate(110vw,15vh);
+    }
+}
+
+
+/* =========================================================
+   ESCENA 4 - CARTA
+========================================================= */
+
+.letter-scene{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            #3d172e,
+            #1d0b18 50%,
+            #0b050a
+        );
+}
+
+.letter-wrapper{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        15px 20px 80px;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.letter-title{
+
+    font-size:
+        clamp(26px,4vw,46px);
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    color:#ffd9eb;
+
+    margin-bottom:20px;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,100,180,.35);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+}
+
+
+/* =========================================================
+   SOBRE NUEVO
+========================================================= */
+
+.envelope{
+
+    position:relative;
+
+    width:min(82vw,520px);
+
+    height:315px;
+
+    flex-shrink:0;
+
+    perspective:1200px;
+
+    cursor:pointer;
+
+    filter:
+        drop-shadow(
+            0 22px 35px
+            rgba(0,0,0,.45)
+        );
+}
+
+
+/* =========================================================
+   CUERPO PRINCIPAL
+========================================================= */
+
+.envelope-body{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f7bdd8,
+            #e99bc2
+        );
+
+    border-radius:8px;
+
+    z-index:2;
+
+    overflow:hidden;
+
+    box-shadow:
+        inset 0 0 25px
+        rgba(255,255,255,.18);
+}
+
+.envelope-body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.18),
+            transparent 45%
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   CARTA
+========================================================= */
+
+.letter{
+
+    position:absolute;
+
+    left:7%;
+
+    width:86%;
+
+    height:265px;
+
+    bottom:18px;
+
+    padding:
+        22px 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdfd,
+            #fff0f6
+        );
+
+    color:#633447;
+
+    border-radius:7px;
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.30);
+
+    z-index:3;
+
+    opacity:0;
+
+    transform:
+        translateY(80px);
+
+    transition:
+
+        transform
+        1s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity
+        .6s
+        ease;
+
+    overflow:hidden;
+}
+
+.letter h3{
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+    font-size:
+        clamp(21px,2.5vw,28px);
+
+    font-style:italic;
+
+    color:#9d426c;
+}
+
+#letterText{
+
+    font-size:
+        clamp(13px,1.5vw,16px);
+
+    line-height:1.55;
+
+    text-align:center;
+
+    color:#633447;
+
+    max-width:500px;
+
+    margin:
+        5px auto 0;
+}
+
+
+/* =========================================================
+   SOLAPA SUPERIOR
+========================================================= */
+
+.envelope-flap{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:58%;
+
+    z-index:9;
+
+    transform-origin:
+        top center;
+
+    transform:
+        rotateX(0deg);
+
+    transition:
+        transform
+        1s
+        cubic-bezier(.65,0,.35,1);
+
+    backface-visibility:hidden;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8c7de,
+            #e9a0c5
+        );
+
+    filter:
+        drop-shadow(
+            0 3px 4px
+            rgba(0,0,0,.12)
+        );
+}
+
+.envelope-flap::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:4%;
+
+    top:4%;
+
+    width:92%;
+
+    height:92%;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 96%
+        );
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.02)
+        );
+}
+
+
+/* =========================================================
+   FRENTE DEL SOBRE
+========================================================= */
+
+.envelope-front{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:7;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            145deg,
+            #efafd0,
+            #efb1d1
+        );
+
+    clip-path:
+        polygon(
+            0 100%,
+            0 48%,
+            50% 82%,
+            100% 48%,
+            100% 100%
+        );
+
+    border-radius:
+        0 0 8px 8px;
+}
+
+
+/* =========================================================
+   PLIEGUES LATERALES
+========================================================= */
+
+.envelope-front::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:50%;
+
+    height:52%;
+
+    background:
+        rgba(255,255,255,.10);
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.envelope-front::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    bottom:0;
+
+    width:50%;
+
+    height:52%;
+
+    background:
+        rgba(255,255,255,.07);
+
+    clip-path:
+        polygon(
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+
+/* =========================================================
+   SOBRE CERRADO
+========================================================= */
+
+.envelope:not(.open)
+.letter{
+
+    opacity:0;
+
+    transform:
+        translateY(80px);
+}
+
+
+/* =========================================================
+   SOBRE ABIERTO
+========================================================= */
+
+.envelope.open
+.envelope-flap{
+
+    transform:
+        rotateX(180deg);
+
+    z-index:1;
+}
+
+.envelope.open
+.letter{
+
+    opacity:1;
+
+    transform:
+        translateY(-65px);
+
+    z-index:20;
+}
+
+
+/* =========================================================
+   HOVER SOBRE
+========================================================= */
+
+.envelope:hover{
+
+    filter:
+        drop-shadow(
+            0 22px 42px
+            rgba(255,100,175,.25)
+        );
+}
+
+.envelope:hover
+.envelope-body{
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(255,255,255,.22);
+}
+
+
+/* =========================================================
+   BOTÓN ABRIR CARTA
+========================================================= */
+
+.letter-button{
+
+    margin-top:20px;
+
+    padding:
+        13px 30px;
+
+    border:
+        1px solid
+        rgba(255,190,220,.55);
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d9d,
+            #d82e79
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,70,155,.4);
+
+    transition:
+        opacity .5s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.letter-button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 35px
+        rgba(255,70,155,.65);
+}
+
+.letter-button:active{
+
+    transform:
+        scale(.97);
+}
+
+
+/* =========================================================
+   DECORACIONES CARTA
+========================================================= */
+
+.letter-decoration{
+
+    position:absolute;
+
+    font-size:30px;
+
+    z-index:5;
+
+    pointer-events:none;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+.letter-decoration.one{
+
+    left:8%;
+
+    top:25%;
+}
+
+.letter-decoration.two{
+
+    right:8%;
+
+    top:28%;
+}
+
+.letter-decoration.three{
+
+    left:12%;
+
+    bottom:18%;
+}
+
+.letter-decoration.four{
+
+    right:12%;
+
+    bottom:20%;
+}
+
+
+/* =========================================================
+   ESCENA 5
+========================================================= */
+
+.scene5-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+        25px 20px 100px;
+}
+
+.scene5-title{
+
+    font-size:
+        clamp(28px,4.5vw,52px);
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    line-height:1.3;
+
+    color:#ffe0ed;
+
+    margin-top:5px;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,90,170,.4);
+}
+
+
+/* =========================================================
+   BOTÓN ESCENA 5
+========================================================= */
+
+.scene5-button{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:100;
+
+    min-width:190px;
+
+    padding:
+        13px 25px;
+
+    border:
+        1px solid
+        rgba(255,190,220,.55);
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,160,.28),
+            rgba(180,40,110,.22)
+        );
+
+    color:#ffeaf4;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(255,80,160,.22),
+
+        inset 0 0 15px
+        rgba(255,255,255,.04);
+
+    transition:.3s;
+}
+
+.scene5-button:hover{
+
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,90,160,.48),
+            rgba(200,45,120,.38)
+        );
+
+    border-color:
+        rgba(255,210,230,.8);
+
+    box-shadow:
+        0 0 28px
+        rgba(255,80,160,.45);
+}
+
+
+/* =========================================================
+   ESCENA FINAL
+========================================================= */
+
+.garden-scene{
+
+    background:
+        linear-gradient(
+            to bottom,
+            #170b20,
+            #29142d 50%,
+            #080508
+        );
+}
+
+.moon{
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    border-radius:50%;
+
+    top:9%;
+
+    right:10%;
+
+    background:#fff3f8;
+
+    box-shadow:
+        0 0 50px
+        rgba(255,240,250,.6);
+}
+
+.garden-content{
+
+    position:relative;
+
+    z-index:10;
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+        0 20px 100px;
+}
+
+.garden-title{
+
+    width:
+        min(90%,800px);
+
+    margin-top:-30px;
+}
+
+.garden-title h2{
+
+    font-size:
+        clamp(38px,6vw,75px);
+
+    font-weight:normal;
+
+    font-style:italic;
+
+    color:#ffd5e8;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,120,180,.5);
+}
+
+.garden-title p{
+
+    margin-top:20px;
+
+    font-size:
+        clamp(16px,2.2vw,24px);
+
+    line-height:1.6;
+
+    color:#ffeaf4;
+}
+
+.garden-heart{
+
+    margin-top:20px;
+
+    font-size:35px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.ground{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:24%;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            #160c17,
+            #080608
+        );
+}
+
+.garden-flower{
+
+    position:absolute;
+
+    bottom:15%;
+
+    font-size:50px;
+
+    opacity:0;
+
+    animation:
+        gardenBloom 1s ease forwards;
+}
+
+.gf1{
+
+    left:8%;
+
+    animation-delay:.5s;
+}
+
+.gf2{
+
+    left:23%;
+
+    animation-delay:1s;
+}
+
+.gf3{
+
+    right:23%;
+
+    animation-delay:1.5s;
+}
+
+.gf4{
+
+    right:8%;
+
+    animation-delay:2s;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes floating{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+    }
+}
+
+@keyframes titleAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.7)
+            translateY(25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+@keyframes shineText{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
+@keyframes giftFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-12px);
+    }
+}
+
+@keyframes lambFloat{
+
+    0%,
+    100%{
+
+        transform:
+            translateY(0);
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+    }
+}
+
+@keyframes flowerGrow{
+
+    from{
+
+        transform:
+            scale(0)
+            rotate(-40deg);
+    }
+
+    to{
+
+        transform:
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+@keyframes gardenBloom{
+
+    from{
+
+        transform:
+            scale(0)
+            translateY(30px);
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:
+            scale(1)
+            translateY(0);
+
+        opacity:1;
+    }
+}
+
+@keyframes heartbeat{
+
+    0%,
+    100%{
+
+        transform:
+            scale(1);
+    }
+
+    50%{
+
+        transform:
+            scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,140,200,.7);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,100,180,.7);
+
+    pointer-events:none;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:999;
+
+    mix-blend-mode:screen;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:700px){
+
+    .cursor-glow{
+        display:none;
+    }
+
+
+    /* INICIO */
+
+    .intro h1{
+
+        font-size:80px;
+    }
+
+    .small-text{
+
+        font-size:15px;
+
+        letter-spacing:2px;
+    }
+
+
+    /* REGALO */
+
+    .gift{
+
+        width:220px;
+
+        height:175px;
+    }
+
+    .bow{
+
+        font-size:55px;
+    }
+
+
+    /* CORDERITO */
+
+    .lamb-content{
+
+        padding:
+            20px 15px 85px;
+    }
+
+    .lamb{
+
+        width:200px;
+
+        height:180px;
+    }
+
+    .lamb-body{
+
+        width:140px;
+
+        height:110px;
+
+        left:40px;
+
+        top:55px;
+    }
+
+    .lamb-head{
+
+        width:90px;
+
+        height:90px;
+
+        top:20px;
+    }
+
+    .lamb-eye{
+
+        top:55px;
+    }
+
+    .lamb-eye.left{
+
+        left:25px;
+    }
+
+    .lamb-eye.right{
+
+        right:25px;
+    }
+
+    .lamb-nose{
+
+        left:36px;
+
+        top:70px;
+    }
+
+    .lamb-mouth{
+
+        left:40px;
+
+        top:81px;
+    }
+
+    .lamb-leg.one{
+
+        left:60px;
+    }
+
+    .lamb-leg.two{
+
+        left:130px;
+    }
+
+    .flower{
+
+        display:none;
+    }
+
+
+    /* CARTA */
+
+    .letter-wrapper{
+
+        padding:
+            10px 12px 70px;
+    }
+
+    .letter-title{
+
+        font-size:27px;
+
+        margin-bottom:15px;
+    }
+
+    .envelope{
+
+        width:88vw;
+
+        max-width:390px;
+
+        height:250px;
+    }
+
+    .letter{
+
+        width:86%;
+
+        left:7%;
+
+        height:215px;
+
+        bottom:15px;
+
+        padding:
+            16px 14px;
+    }
+
+    .letter h3{
+
+        font-size:20px;
+
+        margin-bottom:7px;
+    }
+
+    #letterText{
+
+        font-size:12px;
+
+        line-height:1.45;
+    }
+
+    .envelope.open
+    .letter{
+
+        transform:
+            translateY(-45px);
+    }
+
+    .letter-button{
+
+        margin-top:15px;
+
+        padding:
+            12px 24px;
+
+        font-size:14px;
+    }
+
+    .letter-decoration{
+
+        font-size:22px;
+    }
+
+    .letter-decoration.one{
+
+        left:4%;
+
+        top:18%;
+    }
+
+    .letter-decoration.two{
+
+        right:4%;
+
+        top:20%;
+    }
+
+    .letter-decoration.three{
+
+        left:5%;
+
+        bottom:15%;
+    }
+
+    .letter-decoration.four{
+
+        right:5%;
+
+        bottom:15%;
+    }
+
+
+    /* BOTONES */
+
+    .next-btn{
+
+        bottom:18px;
+
+        min-width:150px;
+
+        padding:
+            11px 22px;
+
+        font-size:14px;
+    }
+
+    .scene5-button{
+
+        bottom:18px;
+
+        min-width:170px;
+
+        padding:
+            11px 22px;
+
+        font-size:14px;
+    }
+
+
+    /* ESCENA 5 */
+
+    .scene5-content{
+
+        padding:
+            20px 15px 85px;
+    }
+
+    .scene5-title{
+
+        font-size:29px;
+    }
+
+
+    /* FINAL */
+
+    .moon{
+
+        width:85px;
+
+        height:85px;
+
+        right:7%;
+
+        top:8%;
+    }
+
+    .garden-content{
+
+        padding:
+            0 15px 80px;
+    }
+
+    .garden-title{
+
+        margin-top:-20px;
+    }
+
+    .garden-title h2{
+
+        font-size:42px;
+    }
+
+    .garden-title p{
+
+        font-size:16px;
+    }
+
+    .garden-flower{
+
+        font-size:38px;
+
+        bottom:13%;
+    }
+}
+
+
+/* =========================================================
+   PANTALLAS BAJAS
+========================================================= */
+
+@media(
+    max-height:700px
+)
+and
+(
+    min-width:701px
+){
+
+    .letter-wrapper{
+
+        transform:
+            scale(.88);
+    }
+
+    .scene5-content{
+
+        transform:
+            scale(.9);
+    }
+
+    .garden-title{
+
+        transform:
+            scale(.9);
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ESCENA 1
+===================================================== -->
+
+<section
+    class="scene active"
+    id="scene1"
+>
+
+    <div class="background"></div>
+
+    <div class="particles"></div>
+
+    <div class="intro">
+
+        <div class="small-text">
+            Hoy es un día muy especial...
+        </div>
+
+        <div class="crown">
+            ♕
+        </div>
+
+        <h1>
+            Evy
+        </h1>
+
+        <button
+            class="main-button"
+            onclick="nextScene(2)"
+        >
+            Empezar la sorpresa 💗
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESCENA 2
+===================================================== -->
+
+<section
+    class="scene"
+    id="scene2"
+>
+
+    <div class="background"></div>
+
+    <div class="particles"></div>
+
+    <div class="gift-content">
+
+        <h2>
+
+            Un pequeño detalle<br>
+
+            preparado especialmente<br>
+
+            para ti... 💗
+
+        </h2>
+
+
+        <div
+            class="gift"
+            id="gift"
+            onclick="openGift()"
+        >
+
+            <div class="bow">
+                🎀
+            </div>
+
+            <div class="gift-lid"></div>
+
+            <div class="gift-box"></div>
+
+            <div class="gift-ribbon"></div>
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="openGift()"
+        >
+            🎁 Abrir regalo
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESCENA 3
+===================================================== -->
+
+<section
+    class="scene"
+    id="scene3"
+>
+
+    <div class="background"></div>
+
+    <div class="particles"></div>
+
+    <div class="lamb-content">
+
+        <h2>
+
+            Hay un pequeño regalo<br>
+
+            que quiere conocerte... 🌸
+
+        </h2>
+
+
+        <div class="lamb">
+
+            <div class="lamb-body"></div>
+
+            <div class="lamb-head">
+
+                <div class="lamb-ear left"></div>
+
+                <div class="lamb-ear right"></div>
+
+                <div class="lamb-eye left"></div>
+
+                <div class="lamb-eye right"></div>
+
+                <div class="lamb-nose"></div>
+
+                <div class="lamb-mouth"></div>
+
+            </div>
+
+            <div class="lamb-leg one"></div>
+
+            <div class="lamb-leg two"></div>
+
+        </div>
+
+
+        <!-- FLOR IZQUIERDA -->
+
+        <div
+            class="flower"
+            style="
+                left:18%;
+                top:52%;
+                animation-delay:.3s;
+            "
+        >
+
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <!-- FLOR DERECHA -->
+
+        <div
+            class="flower"
+            style="
+                right:18%;
+                top:50%;
+                animation-delay:.8s;
+            "
+        >
+
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="butterfly">
+            🦋
+        </div>
+
+
+        <button
+            class="next-btn"
+            onclick="nextScene(4)"
+        >
+            Continuar 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESCENA 4 - CARTA
+===================================================== -->
+
+<section
+    class="scene letter-scene"
+    id="scene4"
+>
+
+    <div class="particles"></div>
+
+
+    <div class="letter-decoration one">
+        🌸
+    </div>
+
+    <div class="letter-decoration two">
+        🦋
+    </div>
+
+    <div class="letter-decoration three">
+        💗
+    </div>
+
+    <div class="letter-decoration four">
+        ✨
+    </div>
+
+
+    <div class="letter-wrapper">
+
+
+        <h2
+            class="letter-title"
+        >
+            Una carta para ti... 💌
+        </h2>
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================= -->
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openLetter()"
+        >
+
+
+            <!-- CARTA -->
+
+            <div class="letter">
+
+                <h3>
+                    Querida Evy...
+                </h3>
+
+                <p id="letterText"></p>
+
+            </div>
+
+
+            <!-- CUERPO DEL SOBRE -->
+
+            <div class="envelope-body"></div>
+
+
+            <!-- FRENTE -->
+
+            <div class="envelope-front"></div>
+
+
+            <!-- SOLAPA -->
+
+            <div class="envelope-flap"></div>
+
+
+        </div>
+
+
+        <!-- BOTÓN -->
+
+        <button
+            class="letter-button"
+            id="letterButton"
+            onclick="openLetter()"
+        >
+            💌 Abrir carta
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESCENA 5
+===================================================== -->
+
+<section
+    class="scene"
+    id="scene5"
+>
+
+    <div class="background"></div>
+
+    <div class="particles"></div>
+
+
+    <div class="scene5-content">
+
+
+        <div class="lamb">
+
+            <div class="lamb-body"></div>
+
+            <div class="lamb-head">
+
+                <div class="lamb-ear left"></div>
+
+                <div class="lamb-ear right"></div>
+
+                <div class="lamb-eye left"></div>
+
+                <div class="lamb-eye right"></div>
+
+                <div class="lamb-nose"></div>
+
+                <div class="lamb-mouth"></div>
+
+            </div>
+
+            <div class="lamb-leg one"></div>
+
+            <div class="lamb-leg two"></div>
+
+        </div>
+
+
+        <h2 class="scene5-title">
+
+            Que nunca te falten<br>
+
+            motivos para sonreír 💗
+
+        </h2>
+
+
+        <div
+            class="flower"
+            style="
+                left:16%;
+                top:48%;
+                animation-delay:.5s;
+            "
+        >
+
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div
+            class="flower"
+            style="
+                right:16%;
+                top:48%;
+                animation-delay:1s;
+            "
+        >
+
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+            <div class="petal-flower"></div>
+
+            <div class="flower-center"></div>
+
+        </div>
+
+
+        <div class="butterfly">
+            🦋
+        </div>
+
+
+        <button
+            class="scene5-button"
+            onclick="nextScene(6)"
+        >
+            Una última sorpresa ✨
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ESCENA 6
+===================================================== -->
+
+<section
+    class="scene garden-scene"
+    id="scene6"
+>
+
+    <div class="moon"></div>
+
+    <div class="ground"></div>
+
+
+    <div class="garden-flower gf1">
+        🌷
+    </div>
+
+    <div class="garden-flower gf2">
+        🌸
+    </div>
+
+    <div class="garden-flower gf3">
+        🌺
+    </div>
+
+    <div class="garden-flower gf4">
+        🌷
+    </div>
+
+
+    <div class="butterfly">
+        🦋
+    </div>
+
+    <div
+        class="butterfly"
+        style="
+            animation-delay:3s;
+            animation-duration:10s;
+        "
+    >
+        🦋
+    </div>
+
+
+    <div class="garden-content">
+
+        <div class="garden-title">
+
+            <div
+                style="
+                    font-size:42px;
+                    margin-bottom:10px;
+                "
+            >
+                🌸 ✨ 🌷
+            </div>
+
+
+            <h2>
+
+                Feliz cumpleaños,<br>
+
+                Evy
+
+            </h2>
+
+
+            <p>
+
+                Que este nuevo año de vida
+                florezca con momentos bonitos,
+                nuevas sonrisas y muchas razones
+                para seguir soñando.
+
+            </p>
+
+
+            <div class="garden-heart">
+                💗
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CURSOR
+===================================================== -->
+
+<div class="cursor-glow"></div>
+
+
+
+<script>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let currentScene = 1;
+
+let giftOpened = false;
+
+let letterOpened = false;
+
+let textIndex = 0;
+
+
+/* =========================================================
+   CAMBIAR ESCENA
+========================================================= */
+
+function nextScene(number){
+
+    const current =
+        document.getElementById(
+            "scene" + currentScene
+        );
+
+    const next =
+        document.getElementById(
+            "scene" + number
+        );
+
+
+    if(!next){
+        return;
+    }
+
+
+    current.classList.remove(
+        "active"
+    );
+
+
+    setTimeout(function(){
+
+        next.classList.add(
+            "active"
+        );
+
+        currentScene =
+            number;
+
+        createParticles(next);
+
+    },350);
+
+}
+
+
+/* =========================================================
+   REGALO
+========================================================= */
+
+function openGift(){
+
+    if(giftOpened){
+        return;
+    }
+
+    giftOpened = true;
+
+
+    const gift =
+        document.getElementById(
+            "gift"
+        );
+
+
+    gift.classList.add(
+        "open"
+    );
+
+
+    createExplosion();
+
+
+    setTimeout(function(){
+
+        nextScene(3);
+
+    },1700);
+
+}
+
+
+/* =========================================================
+   MENSAJE
+========================================================= */
+
+const message =
+`Hoy quiero aprovechar este día
+para desearte un cumpleaños
+lleno de momentos bonitos,
+sonrisas y personas especiales.
+
+Que este nuevo año de vida
+venga acompañado de cosas buenas,
+nuevos sueños y muchos momentos
+para recordar.
+
+¡Feliz cumpleaños, Evy! 💗`;
+
+
+/* =========================================================
+   ABRIR CARTA
+========================================================= */
+
+function openLetter(){
+
+    if(letterOpened){
+        return;
+    }
+
+    letterOpened = true;
+
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+    const button =
+        document.getElementById(
+            "letterButton"
+        );
+
+    const title =
+        document.querySelector(
+            ".letter-title"
+        );
+
+
+    /* ABRIR SOBRE */
+
+    envelope.classList.add(
+        "open"
+    );
+
+
+    /* OCULTAR BOTÓN */
+
+    button.style.opacity =
+        "0";
+
+    button.style.transform =
+        "translateY(15px)";
+
+    button.style.pointerEvents =
+        "none";
+
+
+    /* OCULTAR TÍTULO */
+
+    title.style.opacity =
+        "0";
+
+    title.style.transform =
+        "translateY(-15px)";
+
+
+    /* COMENZAR CARTA */
+
+    setTimeout(function(){
+
+        typeWriter();
+
+    },900);
+
+
+    /* CREAR CONTINUAR */
+
+    setTimeout(function(){
+
+        const nextButton =
+            document.createElement(
+                "button"
+            );
+
+
+        nextButton.className =
+            "next-btn";
+
+
+        nextButton.innerHTML =
+            "Continuar ✨";
+
+
+        nextButton.onclick =
+            function(){
+
+                nextScene(5);
+
+            };
+
+
+        document
+            .getElementById(
+                "scene4"
+            )
+            .appendChild(
+                nextButton
+            );
+
+
+    },6500);
+
+}
+
+
+/* =========================================================
+   ESCRITURA
+========================================================= */
+
+function typeWriter(){
+
+    const element =
+        document.getElementById(
+            "letterText"
+        );
+
+
+    if(
+        textIndex <
+        message.length
+    ){
+
+        const char =
+            message.charAt(
+                textIndex
+            );
+
+
+        if(
+            char === "\n"
+        ){
+
+            element.innerHTML +=
+                "<br><br>";
+
+        }
+        else{
+
+            element.innerHTML +=
+                char;
+
+        }
+
+
+        textIndex++;
+
+
+        setTimeout(
+            typeWriter,
+            30
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   PARTÍCULAS
+========================================================= */
+
+function createParticles(container){
+
+    const box =
+        container.querySelector(
+            ".particles"
+        );
+
+
+    if(!box){
+        return;
+    }
+
+
+    box.innerHTML =
+        "";
+
+
+    for(
+        let i=0;
+        i<40;
+        i++
+    ){
+
+        const particle =
+            document.createElement(
+                "span"
+            );
+
+
+        particle.className =
+            "particle";
+
+
+        particle.style.left =
+            Math.random()*100 +
+            "%";
+
+
+        particle.style.animationDuration =
+            (
+                5 +
+                Math.random()*8
+            ) +
+            "s";
+
+
+        particle.style.animationDelay =
+            Math.random()*5 +
+            "s";
+
+
+        box.appendChild(
+            particle
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   PÉTALOS
+========================================================= */
+
+function createPetals(){
+
+    for(
+        let i=0;
+        i<22;
+        i++
+    ){
+
+        const petal =
+            document.createElement(
+                "div"
+            );
+
+
+        petal.className =
+            "petal";
+
+
+        petal.style.left =
+            Math.random()*100 +
+            "%";
+
+
+        petal.style.animationDuration =
+            (
+                5 +
+                Math.random()*7
+            ) +
+            "s";
+
+
+        petal.style.animationDelay =
+            Math.random()*6 +
+            "s";
+
+
+        document.body.appendChild(
+            petal
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   EXPLOSIÓN
+========================================================= */
+
+function createExplosion(){
+
+    const symbols = [
+
+        "💗",
+        "💖",
+        "✨",
+        "🌸",
+        "💕"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<30;
+        i++
+    ){
+
+        const item =
+            document.createElement(
+                "div"
+            );
+
+
+        item.innerHTML =
+            symbols[
+                Math.floor(
+                    Math.random() *
+                    symbols.length
+                )
+            ];
+
+
+        item.style.position =
+            "fixed";
+
+
+        item.style.left =
+            "50%";
+
+
+        item.style.top =
+            "50%";
+
+
+        item.style.fontSize =
+            (
+                15 +
+                Math.random()*25
+            ) +
+            "px";
+
+
+        item.style.zIndex =
+            "999";
+
+
+        item.style.pointerEvents =
+            "none";
+
+
+        document.body.appendChild(
+            item
+        );
+
+
+        const angle =
+            Math.random() *
+            Math.PI *
+            2;
+
+
+        const distance =
+            100 +
+            Math.random()*300;
+
+
+        const x =
+            Math.cos(angle) *
+            distance;
+
+
+        const y =
+            Math.sin(angle) *
+            distance;
+
+
+        item.animate(
+
+            [
+
+                {
+
+                    transform:
+                        "translate(-50%,-50%) scale(.5)",
+
+                    opacity:1
+
+                },
+
+                {
+
+                    transform:
+                        `translate(
+                            calc(-50% + ${x}px),
+                            calc(-50% + ${y}px)
+                        ) scale(1.2)`,
+
+                    opacity:0
+
+                }
+
+            ],
+
+            {
+
+                duration:
+                    1000 +
+                    Math.random()*900,
+
+                easing:
+                    "cubic-bezier(.2,.8,.3,1)"
+
+            }
+
+        );
+
+
+        setTimeout(
+            function(){
+
+                item.remove();
+
+            },
+            2200
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   CURSOR
+========================================================= */
+
+const cursor =
+    document.querySelector(
+        ".cursor-glow"
+    );
+
+
+document.addEventListener(
+    "mousemove",
+    function(event){
+
+        cursor.style.left =
+            event.clientX +
+            "px";
+
+
+        cursor.style.top =
+            event.clientY +
+            "px";
+
+    }
+);
+
+
+/* =========================================================
+   INICIO
+========================================================= */
+
+createParticles(
+    document.getElementById(
+        "scene1"
+    )
+);
+
+createPetals();
+
+</script>
+
+
+</body>
+
+</html>
