@@ -2,15 +2,17 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0,
-               maximum-scale=1.0,
-               user-scalable=no">
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no,
+viewport-fit=cover">
 
-<meta name="theme-color" content="#120711">
+<meta name="theme-color" content="#100711">
 
 <title>Feliz cumpleaños Evy 💗</title>
 
@@ -28,12 +30,15 @@
 
 html,
 body{
+
     width:100%;
     height:100%;
-}
 
-html{
+    overflow:hidden;
+
     background:#0b050a;
+
+    -webkit-tap-highlight-color:transparent;
 }
 
 body{
@@ -43,22 +48,9 @@ body{
         "Times New Roman",
         serif;
 
-    color:#fff;
-
-    background:#0b050a;
-
-    overflow:hidden;
-
-    -webkit-tap-highlight-color:transparent;
+    color:white;
 
     touch-action:manipulation;
-}
-
-button{
-
-    font-family:inherit;
-
-    -webkit-tap-highlight-color:transparent;
 }
 
 
@@ -72,8 +64,10 @@ button{
 
     inset:0;
 
-    width:100%;
-    height:100%;
+    width:100vw;
+    height:100dvh;
+
+    min-height:100vh;
 
     display:flex;
 
@@ -89,8 +83,7 @@ button{
     overflow:hidden;
 
     transition:
-        opacity .7s ease,
-        visibility .7s ease;
+        opacity .7s ease;
 }
 
 .scene.active{
@@ -117,21 +110,21 @@ button{
 
         radial-gradient(
             circle at 50% 40%,
-            rgba(255,95,175,.18),
-            transparent 32%
+            rgba(255,80,160,.17),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 15% 80%,
+            circle at 20% 80%,
             rgba(255,150,210,.10),
-            transparent 25%
+            transparent 28%
         ),
 
         linear-gradient(
             135deg,
             #090509,
-            #21101d,
-            #10070f
+            #24101f,
+            #0d060d
         );
 }
 
@@ -162,11 +155,11 @@ button{
 
     border-radius:50%;
 
-    background:#ffe8f3;
+    background:#fff;
 
     box-shadow:
-        0 0 8px #ff9dcc,
-        0 0 15px #ff70b6;
+        0 0 7px #ffb2d7,
+        0 0 14px #ff75b7;
 
     animation:
         particleMove linear infinite;
@@ -179,7 +172,7 @@ button{
         transform:
             translateY(110vh)
             translateX(0)
-            scale(.4);
+            scale(.3);
 
         opacity:0;
     }
@@ -196,7 +189,7 @@ button{
 
         transform:
             translateY(-10vh)
-            translateX(80px)
+            translateX(70px)
             scale(1.2);
 
         opacity:0;
@@ -223,8 +216,8 @@ button{
     background:
         linear-gradient(
             135deg,
-            #ffb3d4,
-            #e95299
+            #ffb5d6,
+            #df4c91
         );
 
     pointer-events:none;
@@ -255,7 +248,7 @@ button{
 
         transform:
             translateY(50vh)
-            translateX(80px)
+            translateX(70px)
             rotate(180deg);
     }
 
@@ -263,7 +256,7 @@ button{
 
         transform:
             translateY(110vh)
-            translateX(-70px)
+            translateX(-60px)
             rotate(360deg);
 
         opacity:0;
@@ -272,127 +265,64 @@ button{
 
 
 /* =========================================================
-   BOTÓN PRINCIPAL
+   BOTONES
 ========================================================= */
 
-.main-button{
+.main-button,
+.next-btn,
+.scene5-button{
 
     border:
         1px solid
-        rgba(255,205,225,.5);
-
-    padding:
-        14px 32px;
+        rgba(255,215,235,.7);
 
     border-radius:50px;
 
-    color:#fff;
-
-    font-size:16px;
+    color:white;
 
     background:
         linear-gradient(
             135deg,
             #ff4d9d,
-            #d92f7d
+            #d52c77
         );
 
     box-shadow:
-        0 0 25px
-        rgba(255,70,155,.5);
+        0 7px 25px
+        rgba(255,50,145,.4);
 
     cursor:pointer;
 
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform .25s ease,
+        box-shadow .25s ease;
+
+    -webkit-appearance:none;
+
+    appearance:none;
 }
 
-.main-button:hover{
-
-    transform:scale(1.06);
-
-    box-shadow:
-        0 0 40px
-        rgba(255,70,155,.8);
-}
-
-.main-button:active{
-
-    transform:scale(.96);
-}
-
-
-/* =========================================================
-   BOTONES CONTINUAR
-========================================================= */
-
-.next-btn{
-
-    position:fixed;
-
-    left:50%;
-
-    bottom:
-        calc(
-            20px +
-            env(safe-area-inset-bottom)
-        );
-
-    transform:
-        translateX(-50%);
-
-    z-index:99999;
-
-    min-width:165px;
+.main-button{
 
     min-height:48px;
 
     padding:
-        12px 25px;
-
-    border:
-        1px solid
-        rgba(255,190,220,.7);
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,90,160,.35),
-            rgba(180,40,110,.28)
-        );
-
-    color:#ffeaf4;
+        12px 28px;
 
     font-size:16px;
-
-    cursor:pointer;
-
-    backdrop-filter:
-        blur(10px);
-
-    -webkit-backdrop-filter:
-        blur(10px);
-
-    box-shadow:
-        0 0 20px
-        rgba(255,80,160,.3);
-
-    transition:.3s;
 }
 
-.next-btn:hover{
+.main-button:active,
+.next-btn:active,
+.scene5-button:active{
 
     transform:
-        translateX(-50%)
-        translateY(-3px)
-        scale(1.04);
-
-    box-shadow:
-        0 0 30px
-        rgba(255,80,160,.5);
+        scale(.95);
 }
 
 
@@ -414,11 +344,11 @@ button{
 .small-text{
 
     font-size:
-        clamp(16px,2vw,23px);
+        clamp(15px,2vw,23px);
 
     letter-spacing:3px;
 
-    opacity:.85;
+    opacity:.9;
 }
 
 .crown{
@@ -466,7 +396,7 @@ button{
 
 
 /* =========================================================
-   ESCENA 2 - REGALO
+   ESCENA 2
 ========================================================= */
 
 .gift-content{
@@ -491,7 +421,7 @@ button{
 
     line-height:1.4;
 
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
 .gift{
@@ -515,11 +445,9 @@ button{
     position:absolute;
 
     left:0;
-
     bottom:0;
 
     width:100%;
-
     height:70%;
 
     border-radius:8px;
@@ -545,7 +473,6 @@ button{
     left:42%;
 
     width:16%;
-
     height:100%;
 
     background:#ffe0ed;
@@ -556,11 +483,9 @@ button{
     position:absolute;
 
     top:18%;
-
     left:-5%;
 
     width:110%;
-
     height:25%;
 
     border-radius:8px;
@@ -583,7 +508,6 @@ button{
     position:absolute;
 
     top:0;
-
     bottom:0;
 
     left:44%;
@@ -600,7 +524,6 @@ button{
     position:absolute;
 
     top:-15px;
-
     left:50%;
 
     transform:
@@ -609,11 +532,6 @@ button{
     z-index:10;
 
     font-size:70px;
-}
-
-.gift.open{
-
-    animation:none;
 }
 
 .gift.open .gift-lid{
@@ -635,7 +553,6 @@ button{
     z-index:10;
 
     width:100%;
-
     height:100%;
 
     display:flex;
@@ -649,7 +566,7 @@ button{
     text-align:center;
 
     padding:
-        30px 20px 90px;
+        20px 15px 90px;
 }
 
 .lamb-content h2{
@@ -675,14 +592,10 @@ button{
 
     position:relative;
 
-    width:
-        clamp(190px,27vw,260px);
+    width:220px;
+    height:190px;
 
-    height:
-        clamp(170px,25vw,230px);
-
-    margin:
-        10px auto 5px;
+    margin:10px auto;
 
     animation:
         lambFloat 4s ease-in-out infinite;
@@ -692,13 +605,11 @@ button{
 
     position:absolute;
 
-    width:175px;
+    width:150px;
+    height:115px;
 
-    height:135px;
-
-    left:45px;
-
-    top:65px;
+    left:50px;
+    top:60px;
 
     border-radius:55%;
 
@@ -718,12 +629,10 @@ button{
 
     position:absolute;
 
-    width:110px;
+    width:95px;
+    height:95px;
 
-    height:110px;
-
-    left:0;
-
+    left:5px;
     top:25px;
 
     border-radius:50%;
@@ -739,23 +648,20 @@ button{
 
     position:absolute;
 
-    width:55px;
+    width:50px;
+    height:28px;
 
-    height:30px;
-
-    top:35px;
+    top:32px;
 
     border-radius:
         100% 20%;
 
     background:#f4d8e5;
-
-    transition:.4s;
 }
 
 .lamb-ear.left{
 
-    left:-25px;
+    left:-23px;
 
     transform:
         rotate(-30deg);
@@ -763,7 +669,7 @@ button{
 
 .lamb-ear.right{
 
-    right:-25px;
+    right:-23px;
 
     transform:
         rotate(30deg);
@@ -773,11 +679,10 @@ button{
 
     position:absolute;
 
-    width:8px;
+    width:7px;
+    height:11px;
 
-    height:12px;
-
-    top:68px;
+    top:58px;
 
     border-radius:50%;
 
@@ -785,24 +690,22 @@ button{
 }
 
 .lamb-eye.left{
-    left:31px;
+    left:27px;
 }
 
 .lamb-eye.right{
-    right:31px;
+    right:27px;
 }
 
 .lamb-nose{
 
     position:absolute;
 
-    width:19px;
+    width:18px;
+    height:13px;
 
-    height:14px;
-
-    left:46px;
-
-    top:87px;
+    left:39px;
+    top:73px;
 
     border-radius:50%;
 
@@ -813,13 +716,11 @@ button{
 
     position:absolute;
 
-    left:50px;
+    left:43px;
+    top:84px;
 
-    top:98px;
-
-    width:12px;
-
-    height:8px;
+    width:11px;
+    height:7px;
 
     border-bottom:
         2px solid #714354;
@@ -833,9 +734,8 @@ button{
 
     bottom:0;
 
-    width:28px;
-
-    height:50px;
+    width:25px;
+    height:45px;
 
     border-radius:20px;
 
@@ -847,7 +747,7 @@ button{
 }
 
 .lamb-leg.two{
-    left:160px;
+    left:150px;
 }
 
 
@@ -860,10 +760,7 @@ button{
     position:absolute;
 
     width:60px;
-
     height:60px;
-
-    transform:scale(0);
 
     animation:
         flowerGrow 1s ease forwards;
@@ -874,11 +771,9 @@ button{
     position:absolute;
 
     width:28px;
-
     height:43px;
 
     left:17px;
-
     top:7px;
 
     border-radius:
@@ -927,11 +822,9 @@ button{
     position:absolute;
 
     width:18px;
-
     height:18px;
 
     left:21px;
-
     top:21px;
 
     border-radius:50%;
@@ -990,9 +883,9 @@ button{
 
         radial-gradient(
             circle at 50% 40%,
-            #3d172e,
-            #1d0b18 50%,
-            #0b050a
+            #40172f,
+            #1c0a17 55%,
+            #090409
         );
 }
 
@@ -1003,7 +896,6 @@ button{
     z-index:10;
 
     width:100%;
-
     height:100%;
 
     display:flex;
@@ -1015,18 +907,22 @@ button{
     justify-content:center;
 
     padding:
-        15px 20px 90px;
+        20px 15px 95px;
 }
 
 
 /* =========================================================
-   TÍTULO CARTA
+   TÍTULO
 ========================================================= */
 
 .letter-title{
 
+    flex-shrink:0;
+
+    margin-bottom:20px;
+
     font-size:
-        clamp(26px,4vw,46px);
+        clamp(26px,4vw,45px);
 
     font-weight:normal;
 
@@ -1034,7 +930,7 @@ button{
 
     color:#ffd9eb;
 
-    margin-bottom:20px;
+    text-align:center;
 
     text-shadow:
         0 0 20px
@@ -1054,15 +950,14 @@ button{
 
     position:relative;
 
-    width:min(82vw,520px);
+    width:
+        min(82vw,520px);
 
-    height:315px;
+    height:300px;
 
     flex-shrink:0;
 
     perspective:1200px;
-
-    cursor:pointer;
 
     filter:
         drop-shadow(
@@ -1073,7 +968,7 @@ button{
 
 
 /* =========================================================
-   CUERPO
+   CUERPO DEL SOBRE
 ========================================================= */
 
 .envelope-body{
@@ -1094,49 +989,27 @@ button{
     z-index:2;
 
     overflow:hidden;
-
-    box-shadow:
-        inset 0 0 25px
-        rgba(255,255,255,.18);
-}
-
-.envelope-body::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.18),
-            transparent 45%
-        );
-
-    pointer-events:none;
 }
 
 
 /* =========================================================
-   CARTA INTERNA
+   CARTA
 ========================================================= */
 
 .letter{
 
     position:absolute;
 
-    left:7%;
+    left:6%;
 
-    width:86%;
+    width:88%;
 
-    height:265px;
+    height:260px;
 
     bottom:18px;
 
     padding:
-        22px 28px;
+        20px 25px;
 
     background:
         linear-gradient(
@@ -1147,7 +1020,7 @@ button{
 
     color:#633447;
 
-    border-radius:7px;
+    border-radius:8px;
 
     box-shadow:
         0 15px 35px
@@ -1158,29 +1031,28 @@ button{
     opacity:0;
 
     transform:
-        translateY(80px);
+        translateY(70px);
 
     transition:
 
         transform
-        1s
+        .9s
         cubic-bezier(.2,.8,.2,1),
 
         opacity
-        .6s
-        ease;
+        .6s ease;
 
     overflow:hidden;
 }
 
 .letter h3{
 
-    margin-bottom:12px;
+    margin-bottom:14px;
 
     text-align:center;
 
     font-size:
-        clamp(21px,2.5vw,28px);
+        clamp(20px,2.5vw,28px);
 
     font-style:italic;
 
@@ -1197,11 +1069,6 @@ button{
     text-align:center;
 
     color:#633447;
-
-    max-width:500px;
-
-    margin:
-        5px auto 0;
 }
 
 
@@ -1214,11 +1081,9 @@ button{
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:100%;
-
     height:58%;
 
     z-index:9;
@@ -1231,7 +1096,7 @@ button{
 
     transition:
         transform
-        1s
+        .9s
         cubic-bezier(.65,0,.35,1);
 
     backface-visibility:hidden;
@@ -1251,46 +1116,11 @@ button{
             #f8c7de,
             #e9a0c5
         );
-
-    filter:
-        drop-shadow(
-            0 3px 4px
-            rgba(0,0,0,.12)
-        );
-}
-
-.envelope-flap::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:4%;
-
-    top:4%;
-
-    width:92%;
-
-    height:92%;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 96%
-        );
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.02)
-        );
 }
 
 
 /* =========================================================
-   FRENTE
+   FRENTE DEL SOBRE
 ========================================================= */
 
 .envelope-front{
@@ -1323,56 +1153,6 @@ button{
         0 0 8px 8px;
 }
 
-.envelope-front::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    bottom:0;
-
-    width:50%;
-
-    height:52%;
-
-    background:
-        rgba(255,255,255,.10);
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 100%,
-            0 100%
-        );
-}
-
-.envelope-front::after{
-
-    content:"";
-
-    position:absolute;
-
-    right:0;
-
-    bottom:0;
-
-    width:50%;
-
-    height:52%;
-
-    background:
-        rgba(255,255,255,.07);
-
-    clip-path:
-        polygon(
-            100% 0,
-            100% 100%,
-            0 100%
-        );
-}
-
 
 /* =========================================================
    SOBRE ABIERTO
@@ -1393,7 +1173,7 @@ button{
     opacity:1;
 
     transform:
-        translateY(-65px);
+        translateY(-35px);
 
     z-index:20;
 }
@@ -1411,14 +1191,14 @@ button{
 
     bottom:
         calc(
-            20px +
+            18px +
             env(safe-area-inset-bottom)
         );
 
     transform:
         translateX(-50%);
 
-    z-index:99999;
+    z-index:999999;
 
     display:flex;
 
@@ -1426,18 +1206,16 @@ button{
 
     justify-content:center;
 
-    width:auto;
+    min-width:170px;
 
-    min-width:175px;
-
-    min-height:50px;
+    min-height:49px;
 
     padding:
-        12px 28px;
+        12px 26px;
 
     border:
         1px solid
-        rgba(255,210,230,.8);
+        rgba(255,215,235,.8);
 
     border-radius:50px;
 
@@ -1448,66 +1226,82 @@ button{
             #d82e79
         );
 
-    color:#fff;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    color:white;
 
     font-size:16px;
-
-    font-weight:normal;
 
     white-space:nowrap;
 
     cursor:pointer;
 
-    appearance:none;
-
-    -webkit-appearance:none;
-
-    touch-action:manipulation;
-
     box-shadow:
-
         0 7px 25px
-        rgba(255,50,145,.45),
-
-        0 0 20px
-        rgba(255,80,160,.25);
+        rgba(255,50,145,.45);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        opacity .5s ease;
-}
-
-.letter-button:hover{
-
-    transform:
-        translateX(-50%)
-        translateY(-3px);
-
-    box-shadow:
-
-        0 10px 30px
-        rgba(255,50,145,.6),
-
-        0 0 30px
-        rgba(255,80,160,.35);
-}
-
-.letter-button:active{
-
-    transform:
-        translateX(-50%)
-        scale(.95);
+        opacity .4s ease,
+        transform .25s ease;
 }
 
 
 /* =========================================================
-   DECORACIONES CARTA
+   BOTÓN CONTINUAR
+========================================================= */
+
+.letter-next{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:
+        calc(
+            18px +
+            env(safe-area-inset-bottom)
+        );
+
+    transform:
+        translateX(-50%);
+
+    z-index:999999;
+
+    min-width:165px;
+
+    min-height:49px;
+
+    padding:
+        12px 26px;
+
+    border:
+        1px solid
+        rgba(255,215,235,.8);
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4d9d,
+            #d82e79
+        );
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 7px 25px
+        rgba(255,50,145,.45);
+
+    animation:
+        buttonAppear .6s ease;
+}
+
+
+/* =========================================================
+   DECORACIONES
 ========================================================= */
 
 .letter-decoration{
@@ -1527,28 +1321,24 @@ button{
 .letter-decoration.one{
 
     left:8%;
-
     top:25%;
 }
 
 .letter-decoration.two{
 
     right:8%;
-
     top:28%;
 }
 
 .letter-decoration.three{
 
-    left:12%;
-
-    bottom:18%;
+    left:10%;
+    bottom:20%;
 }
 
 .letter-decoration.four{
 
-    right:12%;
-
+    right:10%;
     bottom:20%;
 }
 
@@ -1564,7 +1354,6 @@ button{
     z-index:10;
 
     width:100%;
-
     height:100%;
 
     display:flex;
@@ -1578,7 +1367,7 @@ button{
     text-align:center;
 
     padding:
-        25px 20px 100px;
+        20px 15px 90px;
 }
 
 .scene5-title{
@@ -1593,10 +1382,6 @@ button{
     line-height:1.3;
 
     color:#ffe0ed;
-
-    text-shadow:
-        0 0 20px
-        rgba(255,90,170,.4);
 }
 
 .scene5-button{
@@ -1607,58 +1392,23 @@ button{
 
     bottom:
         calc(
-            20px +
+            18px +
             env(safe-area-inset-bottom)
         );
 
     transform:
         translateX(-50%);
 
-    z-index:99999;
+    z-index:999999;
 
     min-width:190px;
 
     min-height:48px;
 
     padding:
-        13px 25px;
+        12px 24px;
 
-    border:
-        1px solid
-        rgba(255,190,220,.6);
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,90,160,.35),
-            rgba(180,40,110,.28)
-        );
-
-    color:#ffeaf4;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    backdrop-filter:
-        blur(10px);
-
-    -webkit-backdrop-filter:
-        blur(10px);
-
-    box-shadow:
-        0 0 20px
-        rgba(255,80,160,.25);
-}
-
-.scene5-button:hover{
-
-    transform:
-        translateX(-50%)
-        translateY(-3px)
-        scale(1.04);
+    font-size:15px;
 }
 
 
@@ -1681,14 +1431,12 @@ button{
 
     position:absolute;
 
-    width:140px;
-
-    height:140px;
+    width:130px;
+    height:130px;
 
     border-radius:50%;
 
-    top:9%;
-
+    top:8%;
     right:10%;
 
     background:#fff3f8;
@@ -1705,7 +1453,6 @@ button{
     z-index:10;
 
     width:100%;
-
     height:100%;
 
     display:flex;
@@ -1717,15 +1464,12 @@ button{
     text-align:center;
 
     padding:
-        0 20px 100px;
+        0 15px 90px;
 }
 
 .garden-title{
 
-    width:
-        min(90%,800px);
-
-    margin-top:-30px;
+    width:90%;
 }
 
 .garden-title h2{
@@ -1752,8 +1496,6 @@ button{
         clamp(16px,2.2vw,24px);
 
     line-height:1.6;
-
-    color:#ffeaf4;
 }
 
 .garden-heart{
@@ -1773,7 +1515,6 @@ button{
     bottom:0;
 
     width:100%;
-
     height:24%;
 
     background:
@@ -1840,18 +1581,14 @@ button{
 @keyframes titleAppear{
 
     from{
-
         opacity:0;
-
         transform:
             scale(.7)
             translateY(25px);
     }
 
     to{
-
         opacity:1;
-
         transform:
             scale(1)
             translateY(0);
@@ -1900,24 +1637,21 @@ button{
 @keyframes flowerGrow{
 
     from{
-
         transform:
             scale(0)
             rotate(-40deg);
     }
 
     to{
-
         transform:
             scale(1)
-            rotate(0deg);
+            rotate(0);
     }
 }
 
 @keyframes gardenBloom{
 
     from{
-
         transform:
             scale(0)
             translateY(30px);
@@ -1926,7 +1660,6 @@ button{
     }
 
     to{
-
         transform:
             scale(1)
             translateY(0);
@@ -1949,41 +1682,26 @@ button{
     }
 }
 
+@keyframes buttonAppear{
 
-/* =========================================================
-   CURSOR
-========================================================= */
+    from{
+        opacity:0;
+        transform:
+            translateX(-50%)
+            translateY(20px);
+    }
 
-.cursor-glow{
-
-    position:fixed;
-
-    width:18px;
-
-    height:18px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,140,200,.7);
-
-    box-shadow:
-        0 0 20px
-        rgba(255,100,180,.7);
-
-    pointer-events:none;
-
-    transform:
-        translate(-50%,-50%);
-
-    z-index:999;
-
-    mix-blend-mode:screen;
+    to{
+        opacity:1;
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
 }
 
 
 /* =========================================================
-   TABLET / CELULAR
+   CELULAR
 ========================================================= */
 
 @media(max-width:700px){
@@ -1993,9 +1711,238 @@ button{
     }
 
 
-    /* =========================================
-       ESCENA 1
-    ========================================= */
+    /* =====================================
+       ESCENA CARTA
+    ===================================== */
+
+    .letter-wrapper{
+
+        height:100dvh;
+
+        min-height:100vh;
+
+        justify-content:center;
+
+        padding:
+            10px
+            10px
+            82px;
+    }
+
+
+    .letter-title{
+
+        font-size:23px;
+
+        margin-bottom:10px;
+    }
+
+
+    .envelope{
+
+        width:88vw;
+
+        height:205px;
+
+        max-width:390px;
+    }
+
+
+    .letter{
+
+        left:5%;
+
+        width:90%;
+
+        height:180px;
+
+        bottom:12px;
+
+        padding:
+            13px 12px;
+    }
+
+
+    .letter h3{
+
+        font-size:19px;
+
+        margin-bottom:7px;
+    }
+
+
+    #letterText{
+
+        font-size:11.5px;
+
+        line-height:1.35;
+    }
+
+
+    /* =====================================
+       CUANDO LA CARTA SE ABRE
+    ===================================== */
+
+    .envelope.open
+    .letter{
+
+        /*
+          IMPORTANTE:
+          antes se desplazaba -45/-65px
+          y por eso se cortaba arriba.
+        */
+
+        transform:
+            translateY(-8px);
+
+        width:94%;
+
+        left:3%;
+
+        height:auto;
+
+        min-height:235px;
+
+        max-height:58dvh;
+
+        padding:
+            18px 14px;
+
+        overflow:hidden;
+    }
+
+
+    .envelope.open
+    .letter h3{
+
+        font-size:20px;
+
+        margin-bottom:10px;
+    }
+
+
+    .envelope.open
+    #letterText{
+
+        font-size:12px;
+
+        line-height:1.45;
+
+        max-height:
+            calc(58dvh - 75px);
+
+        overflow:hidden;
+    }
+
+
+    /*
+       Cuando abre, la carta queda
+       centrada y no se va hacia arriba.
+    */
+
+    .letter-wrapper.opened{
+
+        justify-content:center;
+    }
+
+
+    /* =====================================
+       BOTÓN ABRIR
+    ===================================== */
+
+    .letter-button{
+
+        position:fixed !important;
+
+        left:50% !important;
+
+        bottom:
+            calc(
+                12px +
+                env(safe-area-inset-bottom)
+            ) !important;
+
+        transform:
+            translateX(-50%) !important;
+
+        z-index:999999 !important;
+
+        min-width:165px;
+
+        min-height:47px;
+
+        padding:
+            11px 22px;
+
+        font-size:14px;
+    }
+
+
+    /* =====================================
+       BOTÓN CONTINUAR
+    ===================================== */
+
+    .letter-next{
+
+        position:fixed !important;
+
+        left:50% !important;
+
+        bottom:
+            calc(
+                12px +
+                env(safe-area-inset-bottom)
+            ) !important;
+
+        transform:
+            translateX(-50%) !important;
+
+        z-index:999999 !important;
+
+        min-width:160px;
+
+        min-height:47px;
+
+        padding:
+            11px 22px;
+
+        font-size:14px;
+    }
+
+
+    /* =====================================
+       DECORACIONES
+    ===================================== */
+
+    .letter-decoration{
+
+        font-size:22px;
+    }
+
+    .letter-decoration.one{
+        left:4%;
+        top:17%;
+    }
+
+    .letter-decoration.two{
+        right:4%;
+        top:18%;
+    }
+
+    .letter-decoration.three{
+        left:4%;
+        bottom:18%;
+    }
+
+    .letter-decoration.four{
+        right:4%;
+        bottom:18%;
+    }
+
+
+    /* =====================================
+       OTRAS ESCENAS
+    ===================================== */
 
     .intro h1{
         font-size:80px;
@@ -2003,13 +1950,7 @@ button{
 
     .small-text{
         font-size:15px;
-        letter-spacing:2px;
     }
-
-
-    /* =========================================
-       REGALO
-    ========================================= */
 
     .gift{
         width:220px;
@@ -2020,435 +1961,61 @@ button{
         font-size:55px;
     }
 
-
-    /* =========================================
-       CORDERITO
-    ========================================= */
-
     .lamb-content{
-
-        padding:
-            20px 15px 85px;
-    }
-
-    .lamb{
-
-        width:200px;
-
-        height:180px;
-    }
-
-    .lamb-body{
-
-        width:140px;
-
-        height:110px;
-
-        left:40px;
-
-        top:55px;
-    }
-
-    .lamb-head{
-
-        width:90px;
-
-        height:90px;
-
-        top:20px;
-    }
-
-    .lamb-eye{
-
-        top:55px;
-    }
-
-    .lamb-eye.left{
-        left:25px;
-    }
-
-    .lamb-eye.right{
-        right:25px;
-    }
-
-    .lamb-nose{
-
-        left:36px;
-
-        top:70px;
-    }
-
-    .lamb-mouth{
-
-        left:40px;
-
-        top:81px;
-    }
-
-    .lamb-leg.one{
-        left:60px;
-    }
-
-    .lamb-leg.two{
-        left:130px;
+        padding-bottom:80px;
     }
 
     .flower{
         display:none;
     }
 
-
-    /* =========================================
-       ESCENA CARTA
-    ========================================= */
-
-    .letter-wrapper{
-
-        width:100%;
-
-        height:100%;
-
-        min-height:100vh;
-
-        padding:
-            8px
-            10px
-            90px;
-
-        display:flex;
-
-        flex-direction:column;
-
-        justify-content:flex-start;
-
-        align-items:center;
-
-        overflow:visible;
-    }
-
-
-    .letter-title{
-
-        flex-shrink:0;
-
-        margin-top:5px;
-
-        margin-bottom:8px;
-
-        font-size:24px;
-
-        line-height:1.2;
-
-        text-align:center;
-    }
-
-
-    /* =========================================
-       SOBRE CELULAR
-    ========================================= */
-
-    .envelope{
-
-        width:88vw;
-
-        max-width:390px;
-
-        height:220px;
-
-        flex-shrink:0;
-
-        margin-top:5px;
-    }
-
-
-    .letter{
-
-        left:7%;
-
-        width:86%;
-
-        height:190px;
-
-        bottom:12px;
-
-        padding:
-            14px 12px;
-    }
-
-
-    .letter h3{
-
-        font-size:20px;
-
-        margin-bottom:6px;
-
-        line-height:1.2;
-    }
-
-
-    #letterText{
-
-        font-size:12px;
-
-        line-height:1.35;
-
-        max-height:145px;
-
-        overflow:hidden;
-    }
-
-
-    .envelope-flap{
-
-        height:58%;
-    }
-
-
-    .envelope.open
-    .letter{
-
-        transform:
-            translateY(-45px);
-    }
-
-
-    /* =========================================
-       BOTÓN ABRIR CARTA
-       SIEMPRE VISIBLE EN XIAOMI
-    ========================================= */
-
-    .letter-button{
-
-        position:fixed !important;
-
-        left:50% !important;
-
-        bottom:
-            calc(
-                14px +
-                env(safe-area-inset-bottom)
-            ) !important;
-
-        transform:
-            translateX(-50%) !important;
-
-        z-index:999999 !important;
-
-        display:flex !important;
-
-        align-items:center;
-
-        justify-content:center;
-
-        visibility:visible !important;
-
-        opacity:1;
-
-        pointer-events:auto;
-
-        min-width:165px;
-
-        width:auto;
-
-        min-height:48px;
-
-        padding:
-            11px 24px;
-
-        font-size:15px;
-
-        white-space:nowrap;
-
-        border-radius:50px;
-    }
-
-
-    .letter-button:active{
-
-        transform:
-            translateX(-50%)
-            scale(.95) !important;
-    }
-
-
-    /* =========================================
-       DECORACIONES
-    ========================================= */
-
-    .letter-decoration{
-
-        font-size:22px;
-
-        z-index:5;
-    }
-
-    .letter-decoration.one{
-
-        left:4%;
-
-        top:18%;
-    }
-
-    .letter-decoration.two{
-
-        right:4%;
-
-        top:20%;
-    }
-
-    .letter-decoration.three{
-
-        left:5%;
-
-        bottom:15%;
-    }
-
-    .letter-decoration.four{
-
-        right:5%;
-
-        bottom:15%;
-    }
-
-
-    /* =========================================
-       CONTINUAR
-    ========================================= */
-
-    .next-btn{
-
-        bottom:
-            calc(
-                14px +
-                env(safe-area-inset-bottom)
-            );
-
-        min-width:150px;
-
-        min-height:46px;
-
-        padding:
-            11px 22px;
-
-        font-size:14px;
-
-        z-index:999999;
-    }
-
-
-    .scene5-button{
-
-        bottom:
-            calc(
-                14px +
-                env(safe-area-inset-bottom)
-            );
-
-        min-width:170px;
-
-        min-height:46px;
-
-        padding:
-            11px 22px;
-
-        font-size:14px;
-
-        z-index:999999;
-    }
-
-
-    /* =========================================
-       ESCENA 5
-    ========================================= */
-
-    .scene5-content{
-
-        padding:
-            20px
-            15px
-            85px;
-    }
-
     .scene5-title{
-
         font-size:29px;
-
-        line-height:1.3;
     }
-
-
-    /* =========================================
-       FINAL
-    ========================================= */
 
     .moon{
-
         width:85px;
-
         height:85px;
-
         right:7%;
-
-        top:8%;
-    }
-
-    .garden-content{
-
-        padding:
-            0 15px 80px;
-    }
-
-    .garden-title{
-
-        margin-top:-20px;
+        top:7%;
     }
 
     .garden-title h2{
-
         font-size:42px;
     }
 
     .garden-title p{
-
         font-size:16px;
-
         line-height:1.5;
     }
 
     .garden-flower{
-
         font-size:38px;
-
-        bottom:13%;
     }
 
 }
 
 
 /* =========================================================
-   XIAOMI / ANDROID
+   CELULARES PEQUEÑOS
 ========================================================= */
 
-@media(
-    max-width:420px
-){
+@media(max-width:420px){
 
     .letter-wrapper{
 
         padding:
-            6px
+            5px
             8px
-            80px;
+            78px;
     }
 
 
     .letter-title{
 
-        font-size:22px;
+        font-size:21px;
 
-        margin-top:3px;
-
-        margin-bottom:6px;
+        margin-bottom:7px;
     }
 
 
@@ -2456,15 +2023,13 @@ button{
 
         width:90vw;
 
-        height:205px;
-
-        max-width:390px;
+        height:190px;
     }
 
 
     .letter{
 
-        height:175px;
+        height:165px;
 
         padding:
             11px 10px;
@@ -2475,61 +2040,104 @@ button{
 
         font-size:18px;
 
-        margin-bottom:5px;
+        margin-bottom:6px;
     }
 
 
     #letterText{
 
-        font-size:11.5px;
+        font-size:11px;
 
         line-height:1.3;
+    }
 
-        max-height:130px;
+
+    /* =====================================
+       CARTA ABIERTA EN XIAOMI
+    ===================================== */
+
+    .envelope.open
+    .letter{
+
+        transform:
+            translateY(-5px);
+
+        width:94%;
+
+        left:3%;
+
+        min-height:215px;
+
+        max-height:56dvh;
+
+        padding:
+            15px 11px;
+    }
+
+
+    .envelope.open
+    .letter h3{
+
+        font-size:18px;
+
+        margin-bottom:8px;
+    }
+
+
+    .envelope.open
+    #letterText{
+
+        font-size:11px;
+
+        line-height:1.4;
+
+        max-height:
+            calc(56dvh - 65px);
     }
 
 
     .letter-button{
 
-        position:fixed !important;
-
-        left:50% !important;
-
         bottom:
             calc(
-                10px +
+                9px +
                 env(safe-area-inset-bottom)
             ) !important;
 
-        transform:
-            translateX(-50%) !important;
+        min-width:155px;
 
-        min-width:160px;
+        min-height:45px;
 
-        min-height:46px;
+        font-size:13px;
+    }
 
-        padding:
-            10px 22px;
 
-        font-size:14px;
+    .letter-next{
 
-        z-index:999999 !important;
+        bottom:
+            calc(
+                9px +
+                env(safe-area-inset-bottom)
+            ) !important;
+
+        min-width:155px;
+
+        min-height:45px;
+
+        font-size:13px;
     }
 
 }
 
 
 /* =========================================================
-   PANTALLAS MUY PEQUEÑAS
+   CELULAR MUY PEQUEÑO
 ========================================================= */
 
-@media(
-    max-width:360px
-){
+@media(max-width:360px){
 
     .letter-title{
-
-        font-size:20px;
+        font-size:19px;
     }
 
 
@@ -2537,47 +2145,66 @@ button{
 
         width:92vw;
 
-        height:190px;
+        height:175px;
     }
 
 
     .letter{
 
-        height:160px;
+        height:150px;
+
+        padding:
+            9px 8px;
     }
 
 
     .letter h3{
-
         font-size:17px;
     }
 
 
     #letterText{
 
-        font-size:10.5px;
+        font-size:10px;
 
         line-height:1.25;
-
-        max-height:118px;
     }
 
 
-    .letter-button{
+    .envelope.open
+    .letter{
 
-        min-width:150px;
+        min-height:200px;
 
-        min-height:44px;
-
-        font-size:13px;
+        max-height:54dvh;
 
         padding:
-            9px 20px;
+            13px 9px;
+    }
+
+
+    .envelope.open
+    .letter h3{
+
+        font-size:17px;
+    }
+
+
+    .envelope.open
+    #letterText{
+
+        font-size:10.5px;
+
+        line-height:1.3;
+
+        max-height:
+            calc(54dvh - 60px);
     }
 
 }
 
 </style>
+
 </head>
 
 
@@ -2589,36 +2216,36 @@ button{
 ===================================================== -->
 
 <section
-    class="scene active"
-    id="scene1"
->
+class="scene active"
+id="scene1">
 
-    <div class="background"></div>
+<div class="background"></div>
 
-    <div class="particles"></div>
+<div class="particles"></div>
 
-    <div class="intro">
+<div class="intro">
 
-        <div class="small-text">
-            Hoy es un día muy especial...
-        </div>
+<div class="small-text">
+Hoy es un día muy especial...
+</div>
 
-        <div class="crown">
-            ♕
-        </div>
+<div class="crown">
+♕
+</div>
 
-        <h1>
-            Evy
-        </h1>
+<h1>
+Evy
+</h1>
 
-        <button
-            class="main-button"
-            onclick="nextScene(2)"
-        >
-            Empezar la sorpresa 💗
-        </button>
+<button
+class="main-button"
+onclick="nextScene(2)">
 
-    </div>
+Empezar la sorpresa 💗
+
+</button>
+
+</div>
 
 </section>
 
@@ -2629,54 +2256,49 @@ button{
 ===================================================== -->
 
 <section
-    class="scene"
-    id="scene2"
->
+class="scene"
+id="scene2">
 
-    <div class="background"></div>
+<div class="background"></div>
 
-    <div class="particles"></div>
+<div class="particles"></div>
 
-    <div class="gift-content">
+<div class="gift-content">
 
-        <h2>
+<h2>
 
-            Un pequeño detalle<br>
+Un pequeño detalle<br>
+preparado especialmente<br>
+para ti... 💗
 
-            preparado especialmente<br>
+</h2>
 
-            para ti... 💗
+<div
+class="gift"
+id="gift"
+onclick="openGift()">
 
-        </h2>
+<div class="bow">
+🎀
+</div>
 
+<div class="gift-lid"></div>
 
-        <div
-            class="gift"
-            id="gift"
-            onclick="openGift()"
-        >
+<div class="gift-box"></div>
 
-            <div class="bow">
-                🎀
-            </div>
+<div class="gift-ribbon"></div>
 
-            <div class="gift-lid"></div>
+</div>
 
-            <div class="gift-box"></div>
+<button
+class="main-button"
+onclick="openGift()">
 
-            <div class="gift-ribbon"></div>
+🎁 Abrir regalo
 
-        </div>
+</button>
 
-
-        <button
-            class="main-button"
-            onclick="openGift()"
-        >
-            🎁 Abrir regalo
-        </button>
-
-    </div>
+</div>
 
 </section>
 
@@ -2687,206 +2309,199 @@ button{
 ===================================================== -->
 
 <section
-    class="scene"
-    id="scene3"
->
+class="scene"
+id="scene3">
 
-    <div class="background"></div>
+<div class="background"></div>
 
-    <div class="particles"></div>
+<div class="particles"></div>
 
-    <div class="lamb-content">
+<div class="lamb-content">
 
-        <h2>
+<h2>
 
-            Hay un pequeño regalo<br>
+Hay un pequeño regalo<br>
+que quiere conocerte... 🌸
 
-            que quiere conocerte... 🌸
-
-        </h2>
+</h2>
 
 
-        <div class="lamb">
+<div class="lamb">
 
-            <div class="lamb-body"></div>
+<div class="lamb-body"></div>
 
-            <div class="lamb-head">
+<div class="lamb-head">
 
-                <div class="lamb-ear left"></div>
+<div class="lamb-ear left"></div>
 
-                <div class="lamb-ear right"></div>
+<div class="lamb-ear right"></div>
 
-                <div class="lamb-eye left"></div>
+<div class="lamb-eye left"></div>
 
-                <div class="lamb-eye right"></div>
+<div class="lamb-eye right"></div>
 
-                <div class="lamb-nose"></div>
+<div class="lamb-nose"></div>
 
-                <div class="lamb-mouth"></div>
+<div class="lamb-mouth"></div>
 
-            </div>
+</div>
 
-            <div class="lamb-leg one"></div>
+<div class="lamb-leg one"></div>
 
-            <div class="lamb-leg two"></div>
+<div class="lamb-leg two"></div>
 
-        </div>
-
-
-        <!-- FLOR -->
-
-        <div
-            class="flower"
-            style="
-                left:18%;
-                top:52%;
-                animation-delay:.3s;
-            "
-        >
-
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-
-            <div class="flower-center"></div>
-
-        </div>
+</div>
 
 
-        <!-- FLOR -->
+<div
+class="flower"
+style="
+left:18%;
+top:52%;
+">
 
-        <div
-            class="flower"
-            style="
-                right:18%;
-                top:50%;
-                animation-delay:.8s;
-            "
-        >
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
 
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
+<div class="flower-center"></div>
 
-            <div class="flower-center"></div>
-
-        </div>
+</div>
 
 
-        <div class="butterfly">
-            🦋
-        </div>
+<div
+class="flower"
+style="
+right:18%;
+top:50%;
+">
+
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+
+<div class="flower-center"></div>
+
+</div>
 
 
-        <button
-            class="next-btn"
-            onclick="nextScene(4)"
-        >
-            Continuar 💌
-        </button>
+<div class="butterfly">
+🦋
+</div>
 
-    </div>
+
+<button
+class="next-btn"
+onclick="nextScene(4)">
+
+Continuar 💌
+
+</button>
+
+</div>
 
 </section>
 
 
 
 <!-- =====================================================
-     ESCENA 4 - CARTA
+     ESCENA 4
 ===================================================== -->
 
 <section
-    class="scene letter-scene"
-    id="scene4"
->
-
-    <div class="particles"></div>
+class="scene letter-scene"
+id="scene4">
 
 
-    <div class="letter-decoration one">
-        🌸
-    </div>
-
-    <div class="letter-decoration two">
-        🦋
-    </div>
-
-    <div class="letter-decoration three">
-        💗
-    </div>
-
-    <div class="letter-decoration four">
-        ✨
-    </div>
+<div class="particles"></div>
 
 
-    <div class="letter-wrapper">
+<div class="letter-decoration one">
+🌸
+</div>
+
+<div class="letter-decoration two">
+🦋
+</div>
+
+<div class="letter-decoration three">
+💗
+</div>
+
+<div class="letter-decoration four">
+✨
+</div>
 
 
-        <h2 class="letter-title">
-            Una carta para ti... 💌
-        </h2>
+<div
+class="letter-wrapper"
+id="letterWrapper">
 
 
-        <!-- =================================================
-             SOBRE
-        ================================================= -->
+<h2
+class="letter-title"
+id="letterTitle">
 
-        <div
-            class="envelope"
-            id="envelope"
-        >
+Una carta para ti... 💌
 
-
-            <!-- CARTA -->
-
-            <div class="letter">
-
-                <h3>
-                    Querida Evy...
-                </h3>
-
-                <p id="letterText"></p>
-
-            </div>
+</h2>
 
 
-            <!-- CUERPO -->
+<!-- SOBRE -->
 
-            <div class="envelope-body"></div>
-
-
-            <!-- FRENTE -->
-
-            <div class="envelope-front"></div>
+<div
+class="envelope"
+id="envelope">
 
 
-            <!-- SOLAPA -->
+<!-- CARTA -->
 
-            <div class="envelope-flap"></div>
+<div class="letter">
 
+<h3>
+Querida Evy...
+</h3>
 
-        </div>
+<p id="letterText"></p>
 
-
-        <!-- =================================================
-             BOTÓN
-        ================================================= -->
-
-        <button
-            type="button"
-            class="letter-button"
-            id="letterButton"
-        >
-            💌 Abrir carta
-        </button>
+</div>
 
 
-    </div>
+<!-- CUERPO -->
+
+<div class="envelope-body"></div>
+
+
+<!-- FRENTE -->
+
+<div class="envelope-front"></div>
+
+
+<!-- SOLAPA -->
+
+<div class="envelope-flap"></div>
+
+
+</div>
+
+
+<!-- BOTÓN -->
+
+<button
+type="button"
+class="letter-button"
+id="letterButton">
+
+💌 Abrir carta
+
+</button>
+
+
+</div>
 
 </section>
 
@@ -2897,108 +2512,102 @@ button{
 ===================================================== -->
 
 <section
-    class="scene"
-    id="scene5"
->
+class="scene"
+id="scene5">
 
-    <div class="background"></div>
+<div class="background"></div>
 
-    <div class="particles"></div>
+<div class="particles"></div>
 
-
-    <div class="scene5-content">
+<div class="scene5-content">
 
 
-        <div class="lamb">
+<div class="lamb">
 
-            <div class="lamb-body"></div>
+<div class="lamb-body"></div>
 
-            <div class="lamb-head">
+<div class="lamb-head">
 
-                <div class="lamb-ear left"></div>
+<div class="lamb-ear left"></div>
 
-                <div class="lamb-ear right"></div>
+<div class="lamb-ear right"></div>
 
-                <div class="lamb-eye left"></div>
+<div class="lamb-eye left"></div>
 
-                <div class="lamb-eye right"></div>
+<div class="lamb-eye right"></div>
 
-                <div class="lamb-nose"></div>
+<div class="lamb-nose"></div>
 
-                <div class="lamb-mouth"></div>
+<div class="lamb-mouth"></div>
 
-            </div>
+</div>
 
-            <div class="lamb-leg one"></div>
+<div class="lamb-leg one"></div>
 
-            <div class="lamb-leg two"></div>
+<div class="lamb-leg two"></div>
 
-        </div>
-
-
-        <h2 class="scene5-title">
-
-            Que nunca te falten<br>
-
-            motivos para sonreír 💗
-
-        </h2>
+</div>
 
 
-        <div
-            class="flower"
-            style="
-                left:16%;
-                top:48%;
-                animation-delay:.5s;
-            "
-        >
+<h2 class="scene5-title">
 
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
+Que nunca te falten<br>
+motivos para sonreír 💗
 
-            <div class="flower-center"></div>
-
-        </div>
+</h2>
 
 
-        <div
-            class="flower"
-            style="
-                right:16%;
-                top:48%;
-                animation-delay:1s;
-            "
-        >
+<div
+class="flower"
+style="
+left:16%;
+top:48%;
+">
 
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
-            <div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
 
-            <div class="flower-center"></div>
+<div class="flower-center"></div>
 
-        </div>
+</div>
 
 
-        <div class="butterfly">
-            🦋
-        </div>
+<div
+class="flower"
+style="
+right:16%;
+top:48%;
+">
+
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+<div class="petal-flower"></div>
+
+<div class="flower-center"></div>
+
+</div>
 
 
-        <button
-            class="scene5-button"
-            onclick="nextScene(6)"
-        >
-            Una última sorpresa ✨
-        </button>
+<div class="butterfly">
+🦋
+</div>
 
 
-    </div>
+<button
+class="scene5-button"
+onclick="nextScene(6)">
+
+Una última sorpresa ✨
+
+</button>
+
+
+</div>
 
 </section>
 
@@ -3009,98 +2618,90 @@ button{
 ===================================================== -->
 
 <section
-    class="scene garden-scene"
-    id="scene6"
->
+class="scene garden-scene"
+id="scene6">
 
-    <div class="moon"></div>
+<div class="moon"></div>
 
-    <div class="ground"></div>
-
-
-    <div class="garden-flower gf1">
-        🌷
-    </div>
-
-    <div class="garden-flower gf2">
-        🌸
-    </div>
-
-    <div class="garden-flower gf3">
-        🌺
-    </div>
-
-    <div class="garden-flower gf4">
-        🌷
-    </div>
+<div class="ground"></div>
 
 
-    <div class="butterfly">
-        🦋
-    </div>
+<div class="garden-flower gf1">
+🌷
+</div>
+
+<div class="garden-flower gf2">
+🌸
+</div>
+
+<div class="garden-flower gf3">
+🌺
+</div>
+
+<div class="garden-flower gf4">
+🌷
+</div>
 
 
-    <div
-        class="butterfly"
-        style="
-            animation-delay:3s;
-            animation-duration:10s;
-        "
-    >
-        🦋
-    </div>
+<div class="butterfly">
+🦋
+</div>
 
 
-    <div class="garden-content">
+<div
+class="butterfly"
+style="
+animation-delay:3s;
+animation-duration:10s;
+">
 
-        <div class="garden-title">
+🦋
 
-            <div
-                style="
-                    font-size:42px;
-                    margin-bottom:10px;
-                "
-            >
-                🌸 ✨ 🌷
-            </div>
+</div>
 
 
-            <h2>
+<div class="garden-content">
 
-                Feliz cumpleaños,<br>
+<div class="garden-title">
 
-                Evy
+<div
+style="
+font-size:42px;
+margin-bottom:10px;
+">
 
-            </h2>
+🌸 ✨ 🌷
 
-
-            <p>
-
-                Que este nuevo año de vida
-                florezca con momentos bonitos,
-                nuevas sonrisas y muchas razones
-                para seguir soñando.
-
-            </p>
+</div>
 
 
-            <div class="garden-heart">
-                💗
-            </div>
+<h2>
 
-        </div>
+Feliz cumpleaños,<br>
+Evy
 
-    </div>
+</h2>
+
+
+<p>
+
+Que este nuevo año de vida
+florezca con momentos bonitos,
+nuevas sonrisas y muchas razones
+para seguir soñando.
+
+</p>
+
+
+<div class="garden-heart">
+💗
+</div>
+
+</div>
+
+</div>
 
 </section>
-
-
-
-<!-- =====================================================
-     CURSOR
-===================================================== -->
-
-<div class="cursor-glow"></div>
 
 
 
@@ -3135,16 +2736,13 @@ function nextScene(number){
             "scene" + number
         );
 
-
     if(!next){
         return;
     }
 
-
     current.classList.remove(
         "active"
     );
-
 
     setTimeout(function(){
 
@@ -3157,7 +2755,7 @@ function nextScene(number){
 
         createParticles(next);
 
-    },300);
+    },200);
 
 }
 
@@ -3174,20 +2772,16 @@ function openGift(){
 
     giftOpened = true;
 
-
     const gift =
         document.getElementById(
             "gift"
         );
 
-
     gift.classList.add(
         "open"
     );
 
-
     createExplosion();
-
 
     setTimeout(function(){
 
@@ -3199,7 +2793,7 @@ function openGift(){
 
 
 /* =========================================================
-   TEXTO DE LA CARTA
+   CARTA
 ========================================================= */
 
 const message =
@@ -3212,6 +2806,9 @@ Que este nuevo año de vida
 venga acompañado de cosas buenas,
 nuevos sueños y muchos momentos
 para recordar.
+
+Gracias por ser una persona
+tan especial.
 
 ¡Feliz cumpleaños, Evy! 💗`;
 
@@ -3240,12 +2837,12 @@ function openLetter(){
         );
 
     const title =
-        document.querySelector(
-            ".letter-title"
+        document.getElementById(
+            "letterTitle"
         );
 
 
-    /* ABRIR SOBRE */
+    /* ABRIR */
 
     envelope.classList.add(
         "open"
@@ -3267,16 +2864,16 @@ function openLetter(){
         "0";
 
     title.style.transform =
-        "translateY(-15px)";
+        "translateY(-10px)";
 
 
-    /* ESCRIBIR */
+    /* COMENZAR TEXTO */
 
     setTimeout(function(){
 
         typeWriter();
 
-    },850);
+    },700);
 
 
     /* CONTINUAR */
@@ -3288,14 +2885,11 @@ function openLetter(){
                 "button"
             );
 
-
         nextButton.className =
-            "next-btn";
-
+            "letter-next";
 
         nextButton.innerHTML =
             "Continuar ✨";
-
 
         nextButton.onclick =
             function(){
@@ -3303,7 +2897,6 @@ function openLetter(){
                 nextScene(5);
 
             };
-
 
         document
             .getElementById(
@@ -3313,14 +2906,13 @@ function openLetter(){
                 nextButton
             );
 
-
-    },7000);
+    },7500);
 
 }
 
 
 /* =========================================================
-   ESCRITURA DE CARTA
+   EFECTO ESCRITURA
 ========================================================= */
 
 function typeWriter(){
@@ -3329,7 +2921,6 @@ function typeWriter(){
         document.getElementById(
             "letterText"
         );
-
 
     if(
         textIndex <
@@ -3340,7 +2931,6 @@ function typeWriter(){
             message.charAt(
                 textIndex
             );
-
 
         if(
             char === "\n"
@@ -3357,13 +2947,11 @@ function typeWriter(){
 
         }
 
-
         textIndex++;
-
 
         setTimeout(
             typeWriter,
-            28
+            25
         );
 
     }
@@ -3382,15 +2970,11 @@ function createParticles(container){
             ".particles"
         );
 
-
     if(!box){
         return;
     }
 
-
-    box.innerHTML =
-        "";
-
+    box.innerHTML = "";
 
     for(
         let i=0;
@@ -3403,15 +2987,12 @@ function createParticles(container){
                 "span"
             );
 
-
         particle.className =
             "particle";
-
 
         particle.style.left =
             Math.random()*100 +
             "%";
-
 
         particle.style.animationDuration =
             (
@@ -3420,11 +3001,9 @@ function createParticles(container){
             ) +
             "s";
 
-
         particle.style.animationDelay =
             Math.random()*5 +
             "s";
-
 
         box.appendChild(
             particle
@@ -3452,15 +3031,12 @@ function createPetals(){
                 "div"
             );
 
-
         petal.className =
             "petal";
-
 
         petal.style.left =
             Math.random()*100 +
             "%";
-
 
         petal.style.animationDuration =
             (
@@ -3469,11 +3045,9 @@ function createPetals(){
             ) +
             "s";
 
-
         petal.style.animationDelay =
             Math.random()*6 +
             "s";
-
 
         document.body.appendChild(
             petal
@@ -3491,15 +3065,12 @@ function createPetals(){
 function createExplosion(){
 
     const symbols = [
-
         "💗",
         "💖",
         "✨",
         "🌸",
         "💕"
-
     ];
-
 
     for(
         let i=0;
@@ -3512,7 +3083,6 @@ function createExplosion(){
                 "div"
             );
 
-
         item.innerHTML =
             symbols[
                 Math.floor(
@@ -3521,18 +3091,14 @@ function createExplosion(){
                 )
             ];
 
-
         item.style.position =
             "fixed";
-
 
         item.style.left =
             "50%";
 
-
         item.style.top =
             "50%";
-
 
         item.style.fontSize =
             (
@@ -3541,56 +3107,45 @@ function createExplosion(){
             ) +
             "px";
 
-
         item.style.zIndex =
             "999999";
-
 
         item.style.pointerEvents =
             "none";
 
-
         document.body.appendChild(
             item
         );
-
 
         const angle =
             Math.random() *
             Math.PI *
             2;
 
-
         const distance =
             100 +
             Math.random()*300;
-
 
         const x =
             Math.cos(angle) *
             distance;
 
-
         const y =
             Math.sin(angle) *
             distance;
-
 
         item.animate(
 
             [
 
                 {
-
                     transform:
                         "translate(-50%,-50%) scale(.5)",
 
                     opacity:1
-
                 },
 
                 {
-
                     transform:
                         `translate(
                             calc(-50% + ${x}px),
@@ -3598,24 +3153,20 @@ function createExplosion(){
                         ) scale(1.2)`,
 
                     opacity:0
-
                 }
 
             ],
 
             {
-
                 duration:
                     1000 +
                     Math.random()*900,
 
                 easing:
                     "cubic-bezier(.2,.8,.3,1)"
-
             }
 
         );
-
 
         setTimeout(
             function(){
@@ -3632,57 +3183,25 @@ function createExplosion(){
 
 
 /* =========================================================
-   CURSOR PC
+   BOTÓN DE CARTA
 ========================================================= */
 
-const cursor =
-    document.querySelector(
-        ".cursor-glow"
-    );
-
-
-document.addEventListener(
-    "mousemove",
-    function(event){
-
-        cursor.style.left =
-            event.clientX +
-            "px";
-
-
-        cursor.style.top =
-            event.clientY +
-            "px";
-
-    }
-);
-
-
-/* =========================================================
-   BOTÓN CARTA
-   EVENTO TOUCH + CLICK
-========================================================= */
-
-const letterButton =
-    document.getElementById(
+document
+    .getElementById(
         "letterButton"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            openLetter();
+
+        }
     );
 
 
-letterButton.addEventListener(
-    "click",
-    function(event){
-
-        event.preventDefault();
-
-        openLetter();
-
-    }
-);
-
-
 /* =========================================================
-   INICIALIZACIÓN
+   INICIALIZAR
 ========================================================= */
 
 createParticles(
